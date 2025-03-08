@@ -780,3 +780,4 @@ INSERT INTO departamento_parque (ID_DEPARTAMENTO, ID_PARQUE) VALUES
 (8, 5), (8, 6), (8, 12), (8, 17), (8, 21),
 (9, 8), (9, 7), (9, 10), (9, 16), (9, 22),
 (10, 1), (10, 3), (10, 4), (10, 11), (10, 23);
+
