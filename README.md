@@ -8,10 +8,11 @@ En la carpeta de **archivos SQL** se encuentran los siguientes archivos:
 
 1. **Creación de la base de datos**
 2. **Datos ingresados para hacer las pruebas**
-3. **Procedimientos almacenados**
-4. **Funciones**
-5. **Eventos**
-6. **Triggers**
+3. **100 consultas segun los requerimientos**
+4. **Procedimientos almacenados**
+5. **Funciones**
+6. **Eventos**
+7. **Triggers**
 
 Además, en otra carpeta se encuentra el **modelo ER** realizado en **StarUML**.
 
