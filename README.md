@@ -87,8 +87,11 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON gestion_parque.alojamiento TO 'encargado
 FLUSH PRIVILEGES;
 ```
 Ver Usuarios en MySQL
+
 ```SELECT user, host FROM mysql.user;```
+
 Eliminar un Usuario en MySQL
+
 ```
 DROP USER 'nombre_usuario'@'%';
 FLUSH PRIVILEGES;
