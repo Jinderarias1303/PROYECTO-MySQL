@@ -12,7 +12,7 @@ En la carpeta de **archivos SQL** se encuentran los siguientes archivos:
 4. **Procedimientos almacenados**
 5. **Funciones**
 6. **Eventos**
-7. **Triggers**
+
 
 Además, en otra carpeta se encuentra el **modelo ER** realizado en **StarUML**.
 
