@@ -33,10 +33,63 @@ Además, en otra carpeta se encuentra el **modelo ER** realizado en **StarUML**.
 Descripción: Tiene acceso total a la base de datos y puede gestionar todos los aspectos del sistema.
 Permisos:
 - GRANT ALL PRIVILEGES ON gestion_parque.* TO 'admin'@'%';
-Creación del usuario Administrador:
 ```
 DROP USER IF EXISTS 'admin'@'%';
 FLUSH PRIVILEGES;
 CREATE USER 'admin'@'%' IDENTIFIED BY 'Admin_123';
 GRANT ALL PRIVILEGES ON gestion_parque.* TO 'admin'@'%';
 FLUSH PRIVILEGES;
+```
+2. Gestor de Parques
+Descripción: Responsable de la gestión de parques, áreas y especies.
+Permisos: Puede SELECT, INSERT, UPDATE, DELETE en las tablas parque, area y especie.
+```
+DROP USER IF EXISTS 'gestor_parques'@'%';
+FLUSH PRIVILEGES;
+CREATE USER 'gestor_parques'@'%' IDENTIFIED BY 'Gestor_123';
+GRANT SELECT, INSERT, UPDATE, DELETE ON gestion_parque.parque TO 'gestor_parques'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE ON gestion_parque.area TO 'gestor_parques'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE ON gestion_parque.especie TO 'gestor_parques'@'%';
+FLUSH PRIVILEGES;
+```
+3. Investigador
+Descripción: Accede a información de proyectos y especies para investigación.
+Permisos: Puede SELECT en las tablas proyecto y especie.
+```
+DROP USER IF EXISTS 'investigador'@'%';
+FLUSH PRIVILEGES;
+CREATE USER 'investigador'@'%' IDENTIFIED BY 'Investigador_123';
+GRANT SELECT ON gestion_parque.proyecto TO 'investigador'@'%';
+GRANT SELECT ON gestion_parque.especie TO 'investigador'@'%';
+FLUSH PRIVILEGES;
+```
+4. Auditor
+Descripción: Tiene acceso a reportes financieros y datos del personal para auditoría.
+Permisos: Puede SELECT en las tablas proyecto y personal.
+```
+drop user if exists 'auditor'@'123';
+flush privileges;
+
+create user 'auditor'@'123' identified by 'auditor_123';
+grant select on gestion_parque.proyecto to 'auditor'@'123';
+grant select on gestion_parque.personal to 'auditor'@'123';
+flush privileges;
+```
+5. Encargado de Visitantes
+Descripción: Administra el registro de visitantes y alojamientos.
+Permisos: Puede SELECT, INSERT, UPDATE, DELETE en las tablas visitante y alojamiento.
+```
+DROP USER IF EXISTS 'encargado_visitantes'@'%';
+FLUSH PRIVILEGES;
+CREATE USER 'encargado_visitantes'@'%' IDENTIFIED BY 'Encargado123';
+GRANT SELECT, INSERT, UPDATE, DELETE ON gestion_parque.visitante TO 'encargado_visitantes'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE ON gestion_parque.alojamiento TO 'encargado_visitantes'@'%';
+FLUSH PRIVILEGES;
+```
+Ver Usuarios en MySQL
+```SELECT user, host FROM mysql.user;```
+Eliminar un Usuario en MySQL
+```
+DROP USER 'nombre_usuario'@'%';
+FLUSH PRIVILEGES;
+```
